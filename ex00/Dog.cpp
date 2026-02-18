@@ -1,0 +1,35 @@
+#include "Dog.hpp"
+
+Dog::Dog() : Animal()
+{
+	type = "Dog";
+	std::cout << "Cat constructor called" << std::endl;
+}
+
+Dog::Dog(const Dog& orig)
+{
+	type = orig.type;
+	std::cout << "Cat copy constructor called" << std::endl;
+}
+
+Dog&	Dog::operator=(const Dog& orig)
+{
+	type = orig.type;
+	std::cout << "Dog copy assignment operator called" << std::endl;
+	return (*this);
+}
+
+Dog::~Dog()
+{
+	std::cout << "Dog destructor called" << std::endl;
+}
+
+void	Dog::makeSound() const override
+{
+	std::cout << type <<  " bark" << std::endl;
+}
+
+std::string	Dog::getType() const
+{
+	return (type);
+}
