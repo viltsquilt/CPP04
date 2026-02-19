@@ -3,13 +3,13 @@
 Dog::Dog() : Animal()
 {
 	type = "Dog";
-	std::cout << "Cat constructor called" << std::endl;
+	std::cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& orig)
 {
 	type = orig.type;
-	std::cout << "Cat copy constructor called" << std::endl;
+	std::cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog&	Dog::operator=(const Dog& orig)
@@ -24,7 +24,7 @@ Dog::~Dog()
 	std::cout << "Dog destructor called" << std::endl;
 }
 
-void	Dog::makeSound() const override
+void	Dog::makeSound() const
 {
 	std::cout << type <<  " bark" << std::endl;
 }

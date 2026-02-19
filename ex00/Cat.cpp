@@ -24,12 +24,12 @@ Cat::~Cat()
 	std::cout << "Cat destructor called" << std::endl;
 }
 
-void	Cat::makeSound() const override
-
-	std::cout << "meow" << std::endl;
+void	Cat::makeSound() const
+{
+	std::cout << type << " meow" << std::endl;
 }
 
-std::string	Animal::getType() const
+std::string	Cat::getType() const
 {
 	return (type);
 }
