@@ -7,24 +7,28 @@ Cat::Cat() : Animal()
 	brain = new Brain;
 }
 
-Cat::Cat(const Cat& orig)
+Cat::Cat(const Cat& orig) : Animal(orig)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
-	type = orig.type;
 	brain = new Brain(*orig.brain);
 }
 
 Cat&	Cat::operator=(const Cat& orig)
 {
-	type = orig.type;
 	std::cout << "Cat copy assignment operator called" << std::endl;
+	if (this != &orig)
+	{
+		Animal::operator=(orig);
+		delete(brain);
+		brain = new Brain(*orig.brain);
+	}
 	return (*this);
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor called" << std::endl;
 	delete(brain);
+	std::cout << "Cat destructor called" << std::endl;
 }
 
 void	Cat::makeSound() const

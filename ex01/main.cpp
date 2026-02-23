@@ -24,5 +24,35 @@ int	main()
 	for (int k = 0; k < n; k++)
 		delete herd[k];
 	delete[] herd;
+
+	std::cout << "\n";
+	std::cout << "Dog A:" << std::endl;
+	Animal* A = new Dog();
+	std::cout << "\n";
+	std::cout << "Dog B:" << std::endl;
+	std::cout << "\n";
+	Animal* B = new Dog();
+	std::cout << "\n";
+	std::cout << "Dog C:" << std::endl;
+	std::cout << "\n";
+	Dog*    C = new Dog();
+	std::cout << "\n";
+	std::cout << "Dog D:" << std::endl;
+	std::cout << "\n";
+	Dog*    D = new Dog(*C);
+	std::cout << "\n";
+	std::cout << "Animal *A = Animal *B:" << std::endl;
+	std::cout << "\n";
+	*A = *B;
+	std::cout << "\n";
+	std::cout << "Dog *D = Dog *C:" << std::endl;
+	std::cout << "\n";
+	*D =*C;
+
+	delete(A);
+	delete(B);
+	delete(C);
+	delete(D);
+
 	return (0);
 }

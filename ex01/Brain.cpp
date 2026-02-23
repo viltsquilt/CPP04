@@ -15,10 +15,11 @@ Brain::Brain(const Brain& orig)
 Brain&	Brain::operator=(const Brain& orig)
 {
 	std::cout << "Brain copy assignment operator called" << std::endl;
-	if (this == &orig)
-		return (*this);
-	for (int i = 0; i < 100; i++)
-		ideas[i] = orig.ideas[i];
+	if (this != &orig)
+	{
+		for (int i = 0; i < 100; i++)
+			ideas[i] = orig.ideas[i];
+	}
 	return (*this);
 }
 

@@ -2,22 +2,26 @@
 
 Dog::Dog() : Animal()
 {
+	std::cout << "Dog constructor called" << std::endl;
 	type = "Dog";
 	brain = new Brain;
-	std::cout << "Dog constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog& orig)
+Dog::Dog(const Dog& orig) : Animal(orig)
 {
-	type = orig.type;
-	brain = new Brain(*orig.brain);
 	std::cout << "Dog copy constructor called" << std::endl;
+	brain = new Brain(*orig.brain);
 }
 
 Dog&	Dog::operator=(const Dog& orig)
 {
-	type = orig.type;
 	std::cout << "Dog copy assignment operator called" << std::endl;
+	if (this != &orig)
+	{
+		Animal::operator=(orig);
+		delete(brain);
+		brain = new Brain(*orig.brain);
+	}
 	return (*this);
 }
 

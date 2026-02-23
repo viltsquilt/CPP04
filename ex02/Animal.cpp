@@ -2,20 +2,23 @@
 
 Animal::Animal()
 {
-	type = "Animal";
 	std::cout << "Animal constructor called" << std::endl;
+	type = "Animal";
 }
 
 Animal::Animal(const Animal& orig)
 {
-	type = orig.type;
 	std::cout << "Animal copy constructor called" << std::endl;
+	type = orig.type;
 }
 
 Animal&	Animal::operator=(const Animal& orig)
 {
 	std::cout << "Animal copy assignment operator called" << std::endl;
-	type = orig.type;
+	if (this != &orig)
+	{
+		type = orig.type;
+	}
 	return (*this);
 }
 

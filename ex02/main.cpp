@@ -5,6 +5,7 @@
 
 int	main()
 {
+	const Dog*		f = new Dog();
 	const Animal*	i = new Dog();
 	const Animal*	j = new Cat();
 
@@ -12,9 +13,11 @@ int	main()
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound();
 	j->makeSound();
+	f->makeSound();
 
 	delete(i);
 	delete(j);
+	delete(f);
 
 	std::cout << "\n";
 	std::cout << "Dog A:" << std::endl;
